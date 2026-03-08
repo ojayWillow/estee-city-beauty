@@ -5,9 +5,10 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  onClick?: () => void;
 }
 
-export default function Card({ children, className, padding = 'md' }: CardProps) {
+export default function Card({ children, className, padding = 'md', onClick }: CardProps) {
   return (
     <div
       className={clsx(
@@ -20,6 +21,7 @@ export default function Card({ children, className, padding = 'md' }: CardProps)
         },
         className
       )}
+      onClick={onClick}
     >
       {children}
     </div>
