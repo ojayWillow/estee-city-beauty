@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 export default async function ServicesPage() {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
 
   const { data: services } = await supabase
     .from('services')

@@ -9,12 +9,11 @@ import {
   addMinutes,
   isWithinInterval,
   isBefore,
-  startOfDay,
 } from 'date-fns';
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    const supabase = await createServerClient();
     const searchParams = request.nextUrl.searchParams;
     const creatorId = searchParams.get('creatorId');
     const serviceId = searchParams.get('serviceId');

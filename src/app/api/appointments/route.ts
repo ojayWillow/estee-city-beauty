@@ -4,7 +4,7 @@ import { addMinutes, parseISO } from 'date-fns';
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    const supabase = await createServerClient();
     const body = await request.json();
 
     const { creatorId, serviceId, date, time, clientName, clientEmail, clientPhone, notes } = body;
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    const supabase = createServerClient();
+    const supabase = await createServerClient();
     const searchParams = request.nextUrl.searchParams;
     const creatorId = searchParams.get('creatorId');
 

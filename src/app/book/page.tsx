@@ -3,7 +3,7 @@ import { Service, Creator } from '@/types';
 import BookingFlow from './BookingFlow';
 
 export default async function BookPage() {
-  const supabase = createServerClient();
+  const supabase = await createServerClient();
 
   const { data: services } = await supabase
     .from('services')
