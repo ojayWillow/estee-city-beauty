@@ -87,7 +87,7 @@ export default function BookingFlow({ services, creators, preselectedServiceName
       setStep('success');
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Rezerv\u0101cija neizdev\u0101s. L\u016bdzu m\u0113\u0123iniet v\u0113lreiz.');
+      alert('Rezervācija neizdevās. Lūdzu mēģiniet vēlreiz.');
     }
   };
 
@@ -97,9 +97,9 @@ export default function BookingFlow({ services, creators, preselectedServiceName
         <div className="bg-green-50 rounded-full w-20 h-20 mx-auto flex items-center justify-center">
           <Check className="h-10 w-10 text-green-600" />
         </div>
-        <h2 className="text-3xl font-bold">Rezerv\u0101cija veiksmiga!</h2>
+        <h2 className="text-3xl font-bold">Rezervācija veiksmiga!</h2>
         <p className="text-gray-600">
-          Tava rezerv\u0101cija ir veiksmigi saglab\u0101ta. Sanemsi apstiprin\u0101jumu uz e-pastu.
+          Tava rezervācija ir veiksmigi saglabāta. Sanemsi apstiprinājumu uz e-pastu.
         </p>
         <div className="bg-white rounded-xl shadow-lg p-6 space-y-2 text-left">
           <div className="flex justify-between">
@@ -116,7 +116,7 @@ export default function BookingFlow({ services, creators, preselectedServiceName
           </div>
         </div>
         <Button onClick={() => router.push('/')} fullWidth>
-          Atgriezties s\u0101kumlap\u0101
+          Atgriezties sākumlapā
         </Button>
       </div>
     );
@@ -130,7 +130,7 @@ export default function BookingFlow({ services, creators, preselectedServiceName
           { id: 'service', label: 'Pakalpojums' },
           { id: 'creator', label: 'Meistars' },
           { id: 'datetime', label: 'Datums/Laiks' },
-          { id: 'confirm', label: 'Apstiprin\u0101t' },
+          { id: 'confirm', label: 'Apstiprināt' },
         ].map((s, i) => (
           <div key={s.id} className="flex items-center">
             <div
@@ -151,14 +151,14 @@ export default function BookingFlow({ services, creators, preselectedServiceName
       {preselectedServiceName && selectedService && step === 'creator' && (
         <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 flex items-center justify-between max-w-4xl mx-auto">
           <div>
-            <p className="text-sm text-primary-600 font-medium">Izv\u0113l\u0113tais pakalpojums</p>
-            <p className="font-bold text-gray-900">{selectedService.name} — \u20ac{selectedService.price.toFixed(2)}</p>
+            <p className="text-sm text-primary-600 font-medium">Izvēlētais pakalpojums</p>
+            <p className="font-bold text-gray-900">{selectedService.name} — €{selectedService.price.toFixed(2)}</p>
           </div>
           <button
             onClick={() => { setSelectedService(null); setStep('service'); }}
             className="text-sm text-primary-600 hover:text-primary-700 font-semibold underline"
           >
-            Main\u012bt
+            Mainīt
           </button>
         </div>
       )}
@@ -181,7 +181,7 @@ export default function BookingFlow({ services, creators, preselectedServiceName
               onSelect={handleCreatorSelect}
             />
             <Button variant="outline" onClick={() => setStep('service')} fullWidth>
-              Atpaka\u013c
+              Atpakaļ
             </Button>
           </div>
         )}
@@ -195,7 +195,7 @@ export default function BookingFlow({ services, creators, preselectedServiceName
               availableSlots={availableSlots}
             />
             <Button variant="outline" onClick={() => setStep('creator')} fullWidth>
-              Atpaka\u013c
+              Atpakaļ
             </Button>
           </div>
         )}
