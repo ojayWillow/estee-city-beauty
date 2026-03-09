@@ -3,6 +3,20 @@ import { redirect } from 'next/navigation';
 import AppointmentCalendar from './AppointmentCalendar';
 import { Appointment } from '@/types';
 
+interface Creator {
+  id: string;
+  user_id: string;
+  full_name: string;
+  email: string;
+  phone: string;
+  specialties: string[];
+  bio: string;
+  profile_image_url: string | null;
+  location_id: string;
+  created_at: string;
+  updated_at: string;
+}
+
 export default async function AdminPage() {
   const supabase = await createServerClient();
 
@@ -12,13 +26,13 @@ export default async function AdminPage() {
     redirect('/login');
   }
 
-  const { data: creator, error: creatorError } = await supabase
+  const { data: creatorData, error: creatorError } = await supabase
     .from('creators')
     .select('*')
     .eq('user_id', user.id)
     .single();
 
-  if (!creator || creatorError) {
+  if (!creatorData || creatorError) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
@@ -28,6 +42,8 @@ export default async function AdminPage() {
       </div>
     );
   }
+
+  const creator = creatorData as Creator;
 
   const { data: appointmentsData } = await supabase
     .from('appointments')
