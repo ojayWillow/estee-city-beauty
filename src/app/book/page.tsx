@@ -4,7 +4,9 @@ import BookingFlow from './BookingFlow';
 import Link from 'next/link';
 import { Sparkles, ArrowLeft } from 'lucide-react';
 
-export default async function BookPage() {
+export default async function BookPage({ searchParams }: { searchParams: Promise<{ service?: string }> }) {
+  const params = await searchParams;
+  const preselectedService = params.service || null;
   const supabase = await createServerClient();
 
   const { data: services, error: servicesError } = await supabase
@@ -38,37 +40,38 @@ export default async function BookPage() {
             </Link>
             <Link href="/" className="flex items-center text-gray-600 hover:text-primary-600 transition font-medium">
               <ArrowLeft className="h-4 w-4 mr-1" />
-              Atpakaļ
+              Atpaka\u013c
             </Link>
           </div>
         </nav>
       </header>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center mb-2">Pierakstīties vizītē</h1>
-        <p className="text-gray-500 text-center mb-10">Izvēlies pakalpojumu, meistaru un ērtu laiku</p>
+        <h1 className="text-4xl font-bold text-center mb-2">Pierakst\u012bties viz\u012bt\u0113</h1>
+        <p className="text-gray-500 text-center mb-10">Izv\u0113lies pakalpojumu, meistaru un \u0113rtu laiku</p>
 
         {hasData ? (
           <BookingFlow
             services={(services as Service[])}
             creators={(creators as Creator[])}
+            preselectedServiceName={preselectedService}
           />
         ) : (
           <div className="max-w-xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
               <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">⚠️</span>
+                <span className="text-3xl">\u26a0\ufe0f</span>
               </div>
-              <h2 className="text-2xl font-bold mb-3">Rezervācijas sistēma tiek iestatīta</h2>
+              <h2 className="text-2xl font-bold mb-3">Rezerv\u0101cijas sist\u0113ma tiek iestat\u012bta</h2>
               <p className="text-gray-500 mb-6">
-                Tiešsaistes rezervācija drīzumā būs pieejama. Pagaidām lūdzam sazināties ar mums tieši:
+                Tie\u0161saistes rezerv\u0101cija dr\u012bzum\u0101 b\u016bs pieejama. Pagaid\u0101m l\u016bdzam sazin\u0101ties ar mums tie\u0161i:
               </p>
               <div className="space-y-4">
                 <a
                   href="tel:+37125664577"
                   className="block w-full py-4 px-6 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition text-lg"
                 >
-                  📞 +371 25 664 577
+                  \ud83d\udcde +371 25 664 577
                 </a>
                 <a
                   href="https://www.instagram.com/esteecitybeauty"
@@ -76,7 +79,7 @@ export default async function BookPage() {
                   rel="noopener noreferrer"
                   className="block w-full py-4 px-6 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-xl font-semibold hover:opacity-90 transition text-lg"
                 >
-                  📸 Instagram @esteecitybeauty
+                  \ud83d\udcf8 Instagram @esteecitybeauty
                 </a>
                 <a
                   href="https://www.facebook.com/esteecitylounge"
@@ -84,7 +87,7 @@ export default async function BookPage() {
                   rel="noopener noreferrer"
                   className="block w-full py-4 px-6 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition text-lg"
                 >
-                  👍 Facebook
+                  \ud83d\udc4d Facebook
                 </a>
               </div>
               {(servicesError || creatorsError) && (

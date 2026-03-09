@@ -66,7 +66,7 @@ export default function ServiceAccordion({ categories }: { categories: ServiceCa
                 {cat.services.map((service) => (
                   <Link
                     key={service.name}
-                    href="/book"
+                    href={`/book?service=${encodeURIComponent(service.name)}`}
                     className="group flex items-center justify-between p-4 rounded-xl hover:bg-primary-50/50 transition-all duration-200"
                   >
                     <div className="flex-1">

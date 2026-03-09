@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Service, Creator, Appointment } from '@/types';
 import ServiceSelector from '@/components/booking/ServiceSelector';
 import CreatorSelector from '@/components/booking/CreatorSelector';
@@ -13,11 +13,12 @@ import { useRouter } from 'next/navigation';
 interface BookingFlowProps {
   services: Service[];
   creators: Creator[];
+  preselectedServiceName?: string | null;
 }
 
 type Step = 'service' | 'creator' | 'datetime' | 'confirm' | 'success';
 
-export default function BookingFlow({ services, creators }: BookingFlowProps) {
+export default function BookingFlow({ services, creators, preselectedServiceName }: BookingFlowProps) {
   const router = useRouter();
   const [step, setStep] = useState<Step>('service');
   const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -25,6 +26,18 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [availableSlots, setAvailableSlots] = useState<{ [key: string]: any[] }>({});
+
+  useEffect(() => {
+    if (preselectedServiceName && services.length > 0) {
+      const match = services.find(
+        (s) => s.name.toLowerCase() === preselectedServiceName.toLowerCase()
+      );
+      if (match) {
+        setSelectedService(match);
+        setStep('creator');
+      }
+    }
+  }, [preselectedServiceName, services]);
 
   const handleServiceSelect = (service: Service) => {
     setSelectedService(service);
@@ -74,7 +87,7 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
       setStep('success');
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Rezervācija neizdevās. Lūdzu mēģiniet vēlreiz.');
+      alert('Rezerv\u0101cija neizdev\u0101s. L\u016bdzu m\u0113\u0123iniet v\u0113lreiz.');
     }
   };
 
@@ -84,9 +97,9 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
         <div className="bg-green-50 rounded-full w-20 h-20 mx-auto flex items-center justify-center">
           <Check className="h-10 w-10 text-green-600" />
         </div>
-        <h2 className="text-3xl font-bold">Rezervācija veiksmiga!</h2>
+        <h2 className="text-3xl font-bold">Rezerv\u0101cija veiksmiga!</h2>
         <p className="text-gray-600">
-          Tava rezervācija ir veiksmigi saglabāta. Sanemsi apstiprinājumu uz e-pastu.
+          Tava rezerv\u0101cija ir veiksmigi saglab\u0101ta. Sanemsi apstiprin\u0101jumu uz e-pastu.
         </p>
         <div className="bg-white rounded-xl shadow-lg p-6 space-y-2 text-left">
           <div className="flex justify-between">
@@ -103,7 +116,7 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
           </div>
         </div>
         <Button onClick={() => router.push('/')} fullWidth>
-          Atgriezties sākumlapā
+          Atgriezties s\u0101kumlap\u0101
         </Button>
       </div>
     );
@@ -117,7 +130,7 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
           { id: 'service', label: 'Pakalpojums' },
           { id: 'creator', label: 'Meistars' },
           { id: 'datetime', label: 'Datums/Laiks' },
-          { id: 'confirm', label: 'Apstiprināt' },
+          { id: 'confirm', label: 'Apstiprin\u0101t' },
         ].map((s, i) => (
           <div key={s.id} className="flex items-center">
             <div
@@ -133,6 +146,22 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
           </div>
         ))}
       </div>
+
+      {/* Selected service banner when pre-selected */}
+      {preselectedServiceName && selectedService && step === 'creator' && (
+        <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 flex items-center justify-between max-w-4xl mx-auto">
+          <div>
+            <p className="text-sm text-primary-600 font-medium">Izv\u0113l\u0113tais pakalpojums</p>
+            <p className="font-bold text-gray-900">{selectedService.name} — \u20ac{selectedService.price.toFixed(2)}</p>
+          </div>
+          <button
+            onClick={() => { setSelectedService(null); setStep('service'); }}
+            className="text-sm text-primary-600 hover:text-primary-700 font-semibold underline"
+          >
+            Main\u012bt
+          </button>
+        </div>
+      )}
 
       {/* Step Content */}
       <div className="bg-white rounded-xl shadow-lg p-8">
@@ -152,7 +181,7 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
               onSelect={handleCreatorSelect}
             />
             <Button variant="outline" onClick={() => setStep('service')} fullWidth>
-              Atpakaļ
+              Atpaka\u013c
             </Button>
           </div>
         )}
@@ -166,7 +195,7 @@ export default function BookingFlow({ services, creators }: BookingFlowProps) {
               availableSlots={availableSlots}
             />
             <Button variant="outline" onClick={() => setStep('creator')} fullWidth>
-              Atpakaļ
+              Atpaka\u013c
             </Button>
           </div>
         )}
