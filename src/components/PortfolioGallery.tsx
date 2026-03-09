@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const portfolioItems = [
   {
@@ -98,17 +98,8 @@ export default function PortfolioGallery() {
         ))}
       </div>
 
-      {/* Links to profiles */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-        <a
-          href="https://www.skaists.lv/m/3346"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-8 py-3.5 bg-white border-2 border-gray-200 hover:border-primary-300 rounded-full font-semibold text-gray-700 hover:text-primary-600 transition-all"
-        >
-          <ExternalLink className="h-4 w-4 mr-2" />
-          Skaists.lv profils
-        </a>
+      {/* Instagram link */}
+      <div className="flex justify-center mt-10">
         <a
           href="https://www.instagram.com/esteecitybeauty"
           target="_blank"
