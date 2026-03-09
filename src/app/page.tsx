@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Scissors, Eye, Hand, Footprints, Brush, Zap } from 'lucide-react';
+import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Scissors, Eye, Hand, Footprints, Brush, Zap, Navigation } from 'lucide-react';
 
 const serviceCategories = [
   {
@@ -69,17 +69,17 @@ const serviceCategories = [
 const testimonials = [
   {
     name: 'Laura K.',
-    text: 'Vislabākais manikīrs Rīgā! Vienmēr aizeju prom ar smaidu. Ļoti profesionāla pieeja un patīkama atmosfēra.',
+    text: 'Vislabākais manikīrs Rīgā! Vienmēr aizeju prom ar smaidu. Ļoti profesionāla pieeja.',
     rating: 5,
   },
   {
     name: 'Anna M.',
-    text: 'Skropstu pagarināšana bija perfekta. Dabīgs izskats un ilgi turējās. Noteikti iesaku visām!',
+    text: 'Skropstu pagarināšana bija perfekta. Dabīgs izskats un ilgi turējās. Super!',
     rating: 5,
   },
   {
     name: 'Kristīne B.',
-    text: 'Ērta rezervācija un patīkama atmosfēra. Permanentais grims izdarts nevainojami. Atgriezīšos atkal!',
+    text: 'Ērta rezervācija un patīkama atmosfēra. Noteikti atgriezīšos atkal!',
     rating: 5,
   },
 ];
@@ -88,14 +88,17 @@ const locations = [
   {
     name: 'Zolitude',
     address: 'Ruses iela 6/1, Rīga, LV-1029',
+    googleMapsUrl: 'https://maps.google.com/?q=Ruses+iela+6/1,+Riga,+LV-1029',
   },
   {
     name: 'Imanta',
     address: 'Kurzemes prospekts 132A, Rīga, LV-1004',
+    googleMapsUrl: 'https://maps.google.com/?q=Kurzemes+prospekts+132A,+Riga,+LV-1004',
   },
   {
     name: 'Centrs',
     address: 'Merķeļa iela 12, Rīga, LV-1050',
+    googleMapsUrl: 'https://maps.google.com/?q=Merkela+iela+12,+Riga,+LV-1050',
   },
 ];
 
@@ -384,14 +387,25 @@ export default function Home() {
                   <MapPin className="h-7 w-7 text-primary-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Estee City {loc.name}</h3>
-                <p className="text-gray-500 mb-4">{loc.address}</p>
-                <a
-                  href="tel:+37125664577"
-                  className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition"
-                >
-                  <Phone className="h-4 w-4 mr-2" />
-                  +371 25 664 577
-                </a>
+                <p className="text-gray-500 mb-6">{loc.address}</p>
+                <div className="space-y-3">
+                  <a
+                    href="tel:+37125664577"
+                    className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition"
+                  >
+                    <Phone className="h-4 w-4 mr-2" />
+                    +371 25 664 577
+                  </a>
+                  <a
+                    href={loc.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center w-full px-4 py-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-xl font-semibold text-gray-700 hover:text-primary-600 transition-all group/btn"
+                  >
+                    <Navigation className="h-4 w-4 mr-2 group-hover/btn:text-primary-600" />
+                    Atvērt kartē
+                  </a>
+                </div>
               </div>
             ))}
           </div>
