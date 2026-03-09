@@ -57,7 +57,7 @@ const serviceCategories = [
     iconColor: 'text-emerald-600',
     services: [
       { name: 'Sejas masāža', duration: '45 min', price: 25 },
-      { name: 'Relaksējošā ķermeņa masāža', duration: '60 min', price: 40 },
+      { name: 'Relaksējoša ķermeņa masāža', duration: '60 min', price: 40 },
       { name: 'Dziļā sejas tīrīšana', duration: '60 min', price: 35 },
     ],
   },
@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 glass-card">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -111,15 +111,15 @@ export default function Home() {
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold text-gray-900">ESTEE CITY</span>
-                <span className="text-xl font-bold gradient-text"> BEAUTY</span>
+                <span className="text-xl font-bold text-white">ESTEE CITY</span>
+                <span className="text-xl font-bold text-primary-300"> BEAUTY</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-gray-600 hover:text-primary-600 transition font-medium">Pakalpojumi</a>
-              <a href="#locations" className="text-gray-600 hover:text-primary-600 transition font-medium">Saloni</a>
-              <a href="#reviews" className="text-gray-600 hover:text-primary-600 transition font-medium">Atsauksmes</a>
-              <Link href="/login" className="text-gray-600 hover:text-primary-600 transition font-medium">Meistaram</Link>
+              <a href="#services" className="text-white/80 hover:text-white transition font-medium">Pakalpojumi</a>
+              <a href="#locations" className="text-white/80 hover:text-white transition font-medium">Saloni</a>
+              <a href="#reviews" className="text-white/80 hover:text-white transition font-medium">Atsauksmes</a>
+              <Link href="/login" className="text-white/80 hover:text-white transition font-medium">Meistaram</Link>
               <Link
                 href="/book"
                 className="shimmer-btn text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl transition-all"
@@ -134,67 +134,57 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero */}
-      <section className="hero-gradient pt-32 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-pink-200/30 rounded-full blur-3xl animate-float animate-delay-300" />
-        </div>
+      {/* Hero with Background Slideshow */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <HeroSlideshow />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in-up">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 shadow-sm mb-6">
-                <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
-                <span className="ml-2 text-sm font-medium text-gray-700">4.4 / 5.0 • Facebook vērtējums</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                Ātrums,
-                <span className="gradient-text"> kvalitāte</span>
-                <br />un
-                <span className="gradient-text"> drošība</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Profesionāla nagu kopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/book"
-                  className="shimmer-btn text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center justify-center"
-                >
-                  Pierakstīties vizītē
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <a
-                  href="tel:+37125664577"
-                  className="px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 text-gray-700 hover:border-primary-300 hover:text-primary-600 transition-all inline-flex items-center justify-center"
-                >
-                  <Phone className="h-5 w-5 mr-2" />
-                  +371 25 664 577
-                </a>
-              </div>
-
-              <div className="flex items-center gap-8 mt-10">
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">1.7k+</p>
-                  <p className="text-sm text-gray-500">Facebook sekotāji</p>
-                </div>
-                <div className="w-px h-12 bg-gray-200" />
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">3</p>
-                  <p className="text-sm text-gray-500">Saloni Rīgā</p>
-                </div>
-                <div className="w-px h-12 bg-gray-200" />
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">17+</p>
-                  <p className="text-sm text-gray-500">Pakalpojumi</p>
-                </div>
-              </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+              <span className="ml-2 text-sm font-medium text-white/90">4.4 / 5.0 • Facebook vērtējums</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+              Ātrums,
+              <span className="text-primary-300"> kvalitāte</span>
+              <br />un
+              <span className="text-primary-300"> drošība</span>
+            </h1>
+            <p className="text-xl text-white/80 mb-8 leading-relaxed max-w-lg">
+              Profesionāla nagu kopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/book"
+                className="shimmer-btn text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center justify-center"
+              >
+                Pierakstīties vizītē
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <a
+                href="tel:+37125664577"
+                className="px-8 py-4 rounded-full text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all inline-flex items-center justify-center backdrop-blur-sm"
+              >
+                <Phone className="h-5 w-5 mr-2" />
+                +371 25 664 577
+              </a>
             </div>
 
-            {/* Hero Slideshow */}
-            <div className="hidden lg:block animate-fade-in animate-delay-300">
-              <HeroSlideshow />
+            <div className="flex items-center gap-8 mt-12">
+              <div>
+                <p className="text-3xl font-bold text-white">1.7k+</p>
+                <p className="text-sm text-white/60">Facebook sekotāji</p>
+              </div>
+              <div className="w-px h-12 bg-white/20" />
+              <div>
+                <p className="text-3xl font-bold text-white">3</p>
+                <p className="text-sm text-white/60">Saloni Rīgā</p>
+              </div>
+              <div className="w-px h-12 bg-white/20" />
+              <div>
+                <p className="text-3xl font-bold text-white">17+</p>
+                <p className="text-sm text-white/60">Pakalpojumi</p>
+              </div>
             </div>
           </div>
         </div>
@@ -243,7 +233,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { step: '01', icon: <Hand className="h-8 w-8" />, title: 'Izvēlies pakalpojumu', desc: 'Apskatī mūsu pakalpojumu klāstu un izvēlies manikīru, pedikīru, skropstas vai citu procedūru' },
+              { step: '01', icon: <Hand className="h-8 w-8" />, title: 'Izvēlies pakalpojumu', desc: 'Apskati mūsu pakalpojumu klāstu un izvēlies manikīru, pedikīru, skropstas vai citu procedūru' },
               { step: '02', icon: <Calendar className="h-8 w-8" />, title: 'Izvēlies laiku un meistaru', desc: 'Atrodi sev ērtāko datumu, laiku un izvēlies meistaru mūsu kalendārā' },
               { step: '03', icon: <Sparkles className="h-8 w-8" />, title: 'Atnāc uz salonu', desc: 'Atnāc uz izvēlēto Estee City salonu un izbaudi profesionālu apkalpošanu' },
             ].map((item, i) => (
