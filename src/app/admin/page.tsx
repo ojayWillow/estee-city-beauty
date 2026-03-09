@@ -22,14 +22,14 @@ export default async function AdminPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Nav piekļuves</h1>
+          <h1 className="text-2xl font-bold mb-4">Nav piekļauves</h1>
           <p className="text-gray-600">Tev nav meistara konta.</p>
         </div>
       </div>
     );
   }
 
-  const { data: appointments } = await supabase
+  const { data: appointmentsData } = await supabase
     .from('appointments')
     .select(`
       *,
@@ -37,6 +37,8 @@ export default async function AdminPage() {
     `)
     .eq('creator_id', creator.id)
     .order('start_time', { ascending: true });
+
+  const appointments = (appointmentsData || []) as Appointment[];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -51,7 +53,7 @@ export default async function AdminPage() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <AppointmentCalendar
-          appointments={(appointments as Appointment[]) || []}
+          appointments={appointments}
           creatorId={creator.id}
         />
       </main>
