@@ -145,13 +145,13 @@ export default function Home() {
               <span className="ml-2 text-sm font-medium text-white/90">4.4 / 5.0 • Facebook vērtējums</span>
             </div>
             <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
-              Ātrums,
-              <span className="text-primary-300"> kvalitāte</span>
-              <br />un
-              <span className="text-primary-300"> drošība</span>
+              Izjūti
+              <span className="text-primary-300"> skaistumu</span>
+              <br />katrā
+              <span className="text-primary-300"> detaļā</span>
             </h1>
             <p className="text-xl text-white/80 mb-8 leading-relaxed max-w-lg">
-              Profesionāla nagu kopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
+              Profesionāla skaistumkopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
