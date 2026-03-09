@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Eye, Hand, Footprints, Brush, Zap, Navigation } from 'lucide-react';
+import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Eye, Hand, Footprints, Brush, Zap, Navigation, Camera } from 'lucide-react';
 import ServiceAccordion from '@/components/ServiceAccordion';
 import HeroSlideshow from '@/components/HeroSlideshow';
+import PortfolioGallery from '@/components/PortfolioGallery';
 
 const serviceCategories = [
   {
@@ -117,6 +118,7 @@ export default function Home() {
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#services" className="text-white/80 hover:text-white transition font-medium">Pakalpojumi</a>
+              <a href="#portfolio" className="text-white/80 hover:text-white transition font-medium">Galerija</a>
               <a href="#locations" className="text-white/80 hover:text-white transition font-medium">Saloni</a>
               <a href="#reviews" className="text-white/80 hover:text-white transition font-medium">Atsauksmes</a>
               <Link href="/login" className="text-white/80 hover:text-white transition font-medium">Meistaram</Link>
@@ -216,6 +218,25 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Portfolio / Gallery */}
+      <section id="portfolio" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+              Mūsu darbi
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+              Galerija
+            </h2>
+            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+              Apskatī mūsu labākos darbus un iedvesmojies savam nākamajam apmeklējumam
+            </p>
+          </div>
+
+          <PortfolioGallery />
         </div>
       </section>
 
