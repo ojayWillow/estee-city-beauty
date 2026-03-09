@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Scissors, Eye, Hand, Footprints, Brush, Zap, Navigation } from 'lucide-react';
+import { Calendar, Clock, Sparkles, ArrowRight, Star, MapPin, Phone, Instagram, ChevronRight, Shield, Heart, Eye, Hand, Footprints, Brush, Zap, Navigation } from 'lucide-react';
+import ServiceAccordion from '@/components/ServiceAccordion';
+import HeroSlideshow from '@/components/HeroSlideshow';
 
 const serviceCategories = [
   {
     category: 'Manikīrs',
     icon: <Hand className="h-6 w-6" />,
-    color: 'from-rose-500 to-pink-600',
     bg: 'bg-rose-50',
     iconColor: 'text-rose-600',
     services: [
@@ -18,7 +19,6 @@ const serviceCategories = [
   {
     category: 'Pedikīrs',
     icon: <Footprints className="h-6 w-6" />,
-    color: 'from-amber-500 to-orange-600',
     bg: 'bg-amber-50',
     iconColor: 'text-amber-600',
     services: [
@@ -29,7 +29,6 @@ const serviceCategories = [
   {
     category: 'Skropstas un uzacis',
     icon: <Eye className="h-6 w-6" />,
-    color: 'from-violet-500 to-purple-600',
     bg: 'bg-violet-50',
     iconColor: 'text-violet-600',
     services: [
@@ -43,7 +42,6 @@ const serviceCategories = [
   {
     category: 'Permanentais grims',
     icon: <Brush className="h-6 w-6" />,
-    color: 'from-pink-500 to-rose-600',
     bg: 'bg-pink-50',
     iconColor: 'text-pink-600',
     services: [
@@ -55,7 +53,6 @@ const serviceCategories = [
   {
     category: 'Masāža',
     icon: <Heart className="h-6 w-6" />,
-    color: 'from-emerald-500 to-teal-600',
     bg: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
     services: [
@@ -130,7 +127,6 @@ export default function Home() {
                 Pierakstīties
               </Link>
             </div>
-            {/* Mobile */}
             <Link href="/book" className="md:hidden shimmer-btn text-white px-4 py-2 rounded-full text-sm font-semibold">
               Pierakstīties
             </Link>
@@ -159,7 +155,7 @@ export default function Home() {
                 <span className="gradient-text"> drošība</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Profesionāla nagu kopanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
+                Profesionāla nagu kopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -196,72 +192,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Visual */}
-            <div className="relative hidden lg:block animate-fade-in animate-delay-300">
-              <div className="w-full h-[520px] rounded-3xl bg-gradient-to-br from-primary-100 via-pink-50 to-rose-50 shadow-2xl overflow-hidden">
-                <div className="p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-sm mb-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-medium text-gray-500">Populārākie pakalpojumi</span>
-                        <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Pieejams šodien</span>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
-                          <div className="flex items-center">
-                            <div className="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center mr-3">
-                              <Hand className="h-4 w-4 text-rose-600" />
-                            </div>
-                            <span className="font-medium">Manikīrs gēllaku</span>
-                          </div>
-                          <span className="font-bold text-primary-600">€35</span>
-                        </div>
-                        <div className="flex items-center justify-between py-2 border-b border-gray-100">
-                          <div className="flex items-center">
-                            <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center mr-3">
-                              <Footprints className="h-4 w-4 text-amber-600" />
-                            </div>
-                            <span className="font-medium">Pedikīrs</span>
-                          </div>
-                          <span className="font-bold text-primary-600">€40</span>
-                        </div>
-                        <div className="flex items-center justify-between py-2">
-                          <div className="flex items-center">
-                            <div className="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center mr-3">
-                              <Eye className="h-4 w-4 text-violet-600" />
-                            </div>
-                            <span className="font-medium">Skropstu laminēšana</span>
-                          </div>
-                          <span className="font-bold text-primary-600">€30</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-white/70 rounded-2xl p-4 backdrop-blur-sm text-center">
-                      <Shield className="h-6 w-6 text-primary-600 mx-auto mb-2" />
-                      <p className="text-xs font-medium text-gray-600">Drošība</p>
-                    </div>
-                    <div className="bg-white/70 rounded-2xl p-4 backdrop-blur-sm text-center">
-                      <Zap className="h-6 w-6 text-primary-600 mx-auto mb-2" />
-                      <p className="text-xs font-medium text-gray-600">Ātrums</p>
-                    </div>
-                    <div className="bg-white/70 rounded-2xl p-4 backdrop-blur-sm text-center">
-                      <Star className="h-6 w-6 text-primary-600 mx-auto mb-2" />
-                      <p className="text-xs font-medium text-gray-600">Kvalitāte</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary-200/50 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-pink-200/50 rounded-full blur-3xl -z-10" />
+            {/* Hero Slideshow */}
+            <div className="hidden lg:block animate-fade-in animate-delay-300">
+              <HeroSlideshow />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Accordion */}
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -276,46 +215,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-8">
-            {serviceCategories.map((cat) => (
-              <div key={cat.category} className="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center mb-6">
-                    <div className={`w-12 h-12 ${cat.bg} rounded-2xl flex items-center justify-center ${cat.iconColor} mr-4`}>
-                      {cat.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">{cat.category}</h3>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {cat.services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href="/book"
-                        className="service-card group flex items-center justify-between p-4 rounded-2xl border border-gray-100 hover:border-primary-200 hover:bg-primary-50/30 transition-all duration-200"
-                      >
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 group-hover:text-primary-600 transition">
-                            {service.name}
-                          </h4>
-                          <div className="flex items-center space-x-3 mt-1">
-                            <span className="text-sm text-gray-400 flex items-center">
-                              <Clock className="h-3.5 w-3.5 mr-1" />
-                              {service.duration}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <span className="text-2xl font-bold gradient-text">€{service.price}</span>
-                          <ChevronRight className="service-arrow h-5 w-5 text-gray-300 group-hover:text-primary-500 transition-all duration-200" />
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ServiceAccordion categories={serviceCategories} />
 
           <div className="text-center mt-12">
             <Link
@@ -341,7 +241,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               { step: '01', icon: <Hand className="h-8 w-8" />, title: 'Izvēlies pakalpojumu', desc: 'Apskatī mūsu pakalpojumu klāstu un izvēlies manikīru, pedikīru, skropstas vai citu procedūru' },
               { step: '02', icon: <Calendar className="h-8 w-8" />, title: 'Izvēlies laiku un meistaru', desc: 'Atrodi sev ērtāko datumu, laiku un izvēlies meistaru mūsu kalendārā' },
@@ -380,7 +280,7 @@ export default function Home() {
             <p className="text-xl text-gray-500">Izvēlies sev tuvāko Estee City salonu</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {locations.map((loc) => (
               <div key={loc.name} className="bg-gray-50 rounded-3xl p-8 hover:bg-primary-50/50 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:shadow-md transition">
@@ -400,9 +300,9 @@ export default function Home() {
                     href={loc.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center w-full px-4 py-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-xl font-semibold text-gray-700 hover:text-primary-600 transition-all group/btn"
+                    className="flex items-center w-full px-4 py-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-xl font-semibold text-gray-700 hover:text-primary-600 transition-all"
                   >
-                    <Navigation className="h-4 w-4 mr-2 group-hover/btn:text-primary-600" />
+                    <Navigation className="h-4 w-4 mr-2" />
                     Atvērt kartē
                   </a>
                 </div>
@@ -424,7 +324,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className="flex mb-4">
@@ -447,7 +347,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-rose-500 rounded-3xl p-12 lg:p-16 text-center text-white shadow-2xl shadow-primary-500/30">
             <h2 className="text-4xl lg:text-5xl font-extrabold mb-4">
               Gatava uz vizīti?
@@ -487,23 +387,13 @@ export default function Home() {
                 <span className="text-xl font-bold">ESTEE CITY BEAUTY</span>
               </div>
               <p className="text-gray-400 max-w-md mb-6">
-                Profesionāla skaistumkopšanas studija ar 3 saloniem Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Jūsu veselība un skaistums labās rokās!
+                Profesionāla skaistumkopšanas studija ar 3 saloniem Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža.
               </p>
               <div className="flex space-x-4">
-                <a
-                  href="https://www.facebook.com/esteecitylounge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition"
-                >
+                <a href="https://www.facebook.com/esteecitylounge" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
                   <span className="text-sm font-bold">f</span>
                 </a>
-                <a
-                  href="https://www.instagram.com/esteecitybeauty"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition"
-                >
+                <a href="https://www.instagram.com/esteecitybeauty" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
                   <Instagram className="h-4 w-4" />
                 </a>
               </div>
@@ -535,9 +425,6 @@ export default function Home() {
                   <Instagram className="h-4 w-4 flex-shrink-0" />
                   <span>@esteecitybeauty</span>
                 </a>
-                <div className="pt-2">
-                  <p className="text-sm">Pieraksts: DIRECT vai tālrunis</p>
-                </div>
               </div>
               <h4 className="font-bold mt-6 mb-2">Saites</h4>
               <div className="space-y-2">
