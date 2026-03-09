@@ -12,13 +12,13 @@ export default async function AdminPage() {
     redirect('/login');
   }
 
-  const { data: creator } = await supabase
+  const { data: creator, error: creatorError } = await supabase
     .from('creators')
     .select('*')
     .eq('user_id', user.id)
     .single();
 
-  if (!creator) {
+  if (!creator || creatorError) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
