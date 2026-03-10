@@ -7,7 +7,7 @@ import PortfolioGallery from '@/components/PortfolioGallery';
 const serviceCategories = [
   {
     category: 'Manikīrs',
-    icon: <Hand className="h-6 w-6" />,
+    icon: <Hand className="h-5 w-5" />,
     bg: 'bg-rose-50',
     iconColor: 'text-rose-600',
     services: [
@@ -19,7 +19,7 @@ const serviceCategories = [
   },
   {
     category: 'Pedikīrs',
-    icon: <Footprints className="h-6 w-6" />,
+    icon: <Footprints className="h-5 w-5" />,
     bg: 'bg-amber-50',
     iconColor: 'text-amber-600',
     services: [
@@ -29,7 +29,7 @@ const serviceCategories = [
   },
   {
     category: 'Skropstas un uzacis',
-    icon: <Eye className="h-6 w-6" />,
+    icon: <Eye className="h-5 w-5" />,
     bg: 'bg-violet-50',
     iconColor: 'text-violet-600',
     services: [
@@ -42,7 +42,7 @@ const serviceCategories = [
   },
   {
     category: 'Permanentais grims',
-    icon: <Brush className="h-6 w-6" />,
+    icon: <Brush className="h-5 w-5" />,
     bg: 'bg-pink-50',
     iconColor: 'text-pink-600',
     services: [
@@ -53,7 +53,7 @@ const serviceCategories = [
   },
   {
     category: 'Masāža',
-    icon: <Heart className="h-6 w-6" />,
+    icon: <Heart className="h-5 w-5" />,
     bg: 'bg-emerald-50',
     iconColor: 'text-emerald-600',
     services: [
@@ -105,15 +105,15 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-3">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+            <Link href="/" className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
+                <Sparkles className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-white" />
               </div>
               <div>
-                <span className="text-base sm:text-xl font-bold text-white">ESTEE CITY</span>
-                <span className="text-base sm:text-xl font-bold text-primary-300"> BEAUTY</span>
+                <span className="text-sm sm:text-xl font-bold text-white">ESTEE CITY</span>
+                <span className="text-sm sm:text-xl font-bold text-primary-300"> BEAUTY</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
@@ -129,7 +129,7 @@ export default function Home() {
                 Pierakstīties
               </Link>
             </div>
-            <Link href="/book" className="md:hidden shimmer-btn text-white px-4 py-2 rounded-full text-sm font-semibold">
+            <Link href="/book" className="md:hidden shimmer-btn text-white px-3 py-1.5 rounded-full text-xs font-semibold">
               Pierakstīties
             </Link>
           </div>
@@ -137,55 +137,55 @@ export default function Home() {
       </header>
 
       {/* Hero with Background Slideshow */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden">
         <HeroSlideshow />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-32">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 sm:mb-6">
-              <Star className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-amber-400 fill-amber-400" />
-              <span className="ml-2 text-xs sm:text-sm font-medium text-white/90">4.4 / 5.0 • Facebook vērtējums</span>
+            <div className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-3 sm:mb-6">
+              <Star className="h-3 w-3 sm:h-4 sm:w-4 text-amber-400 fill-amber-400" />
+              <span className="ml-1.5 text-xs sm:text-sm font-medium text-white/90">4.4 / 5.0 • Facebook vērtējums</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-3 sm:mb-6">
               Izjūti
               <span className="text-primary-300"> skaistumu</span>
               <br />katrā
               <span className="text-primary-300"> detaļā</span>
             </h1>
-            <p className="text-base sm:text-xl text-white/80 mb-6 sm:mb-8 leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-xl text-white/80 mb-4 sm:mb-8 leading-relaxed max-w-lg">
               Profesionāla skaistumkopšanas studija Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža. Pieraksts tiešsaistē vai pa tālruni.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
               <Link
                 href="/book"
-                className="shimmer-btn text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center justify-center"
+                className="shimmer-btn text-white px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center justify-center"
               >
                 Pierakstīties vizītē
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
               <a
                 href="tel:+37125664577"
-                className="px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all inline-flex items-center justify-center backdrop-blur-sm"
+                className="px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all inline-flex items-center justify-center backdrop-blur-sm"
               >
-                <Phone className="h-5 w-5 mr-2" />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 +371 25 664 577
               </a>
             </div>
 
-            <div className="flex items-center gap-4 sm:gap-8 mt-8 sm:mt-12">
+            <div className="flex items-center gap-4 sm:gap-8 mt-6 sm:mt-12">
               <div>
-                <p className="text-xl sm:text-3xl font-bold text-white">1.7k+</p>
-                <p className="text-xs sm:text-sm text-white/60">Facebook sekotāji</p>
+                <p className="text-lg sm:text-3xl font-bold text-white">1.7k+</p>
+                <p className="text-xs text-white/60">Facebook sekotāji</p>
               </div>
-              <div className="w-px h-10 sm:h-12 bg-white/20" />
+              <div className="w-px h-8 sm:h-12 bg-white/20" />
               <div>
-                <p className="text-xl sm:text-3xl font-bold text-white">3</p>
-                <p className="text-xs sm:text-sm text-white/60">Saloni Rīgā</p>
+                <p className="text-lg sm:text-3xl font-bold text-white">3</p>
+                <p className="text-xs text-white/60">Saloni Rīgā</p>
               </div>
-              <div className="w-px h-10 sm:h-12 bg-white/20" />
+              <div className="w-px h-8 sm:h-12 bg-white/20" />
               <div>
-                <p className="text-xl sm:text-3xl font-bold text-white">17+</p>
-                <p className="text-xs sm:text-sm text-white/60">Pakalpojumi</p>
+                <p className="text-lg sm:text-3xl font-bold text-white">17+</p>
+                <p className="text-xs text-white/60">Pakalpojumi</p>
               </div>
             </div>
           </div>
@@ -193,45 +193,45 @@ export default function Home() {
       </section>
 
       {/* Services Accordion */}
-      <section id="services" className="py-14 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+      <section id="services" className="py-8 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-16">
+            <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4">
               Pakalpojumi un cenas
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 sm:mb-4">
               Mūsu pakalpojumi
             </h2>
-            <p className="text-base sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-xl text-gray-500 max-w-2xl mx-auto">
               Profesionāli skaistumkopšanas pakalpojumi ar kvalitatīviem produktiem
             </p>
           </div>
 
           <ServiceAccordion categories={serviceCategories} />
 
-          <div className="text-center mt-8 sm:mt-12">
+          <div className="text-center mt-6 sm:mt-12">
             <Link
               href="/book"
-              className="shimmer-btn text-white px-8 py-3 sm:px-10 sm:py-4 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center"
+              className="shimmer-btn text-white px-6 py-2.5 sm:px-10 sm:py-4 rounded-full text-sm sm:text-lg font-bold shadow-xl shadow-primary-500/30 hover:shadow-2xl transition-all inline-flex items-center"
             >
               Pierakstīties uz vizīti
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Portfolio / Gallery */}
-      <section id="portfolio" className="py-14 sm:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+      <section id="portfolio" className="py-8 sm:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-16">
+            <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4">
               Mūsu darbi
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 sm:mb-4">
               Galerija
             </h2>
-            <p className="text-base sm:text-xl text-gray-500 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-xl text-gray-500 max-w-2xl mx-auto">
               Apskatī mūsu labākos darbus un iedvesmojies savam nākamajam apmeklējumam
             </p>
           </div>
@@ -241,31 +241,31 @@ export default function Home() {
       </section>
 
       {/* How it Works */}
-      <section className="py-14 sm:py-24 hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-white/80 text-primary-600 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+      <section className="py-8 sm:py-24 hero-gradient">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-16">
+            <span className="inline-block px-3 py-1 bg-white/80 text-primary-600 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4">
               Kā pierakstīties
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 sm:mb-4">
               3 vienkārši soļi
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-8 max-w-4xl mx-auto">
             {[
-              { step: '01', icon: <Hand className="h-6 w-6 sm:h-8 sm:w-8" />, title: 'Izvēlies pakalpojumu', desc: 'Apskati mūsu pakalpojumu klāstu un izvēlies manikīru, pedikīru, skropstas vai citu procedūru' },
-              { step: '02', icon: <Calendar className="h-6 w-6 sm:h-8 sm:w-8" />, title: 'Izvēlies laiku un meistaru', desc: 'Atrodi sev ērtāko datumu, laiku un izvēlies meistaru mūsu kalendārā' },
-              { step: '03', icon: <Sparkles className="h-6 w-6 sm:h-8 sm:w-8" />, title: 'Atnāc uz salonu', desc: 'Atnāc uz izvēlēto Estee City salonu un izbaudi profesionālu apkalpošanu' },
+              { step: '01', icon: <Hand className="h-5 w-5 sm:h-8 sm:w-8" />, title: 'Izvēlies pakalpojumu', desc: 'Apskati mūsu pakalpojumu klāstu un izvēlies manikīru, pedikīru, skropstas vai citu procedūru' },
+              { step: '02', icon: <Calendar className="h-5 w-5 sm:h-8 sm:w-8" />, title: 'Izvēlies laiku un meistaru', desc: 'Atrodi sev ērtāko datumu, laiku un izvēlies meistaru mūsu kalendārā' },
+              { step: '03', icon: <Sparkles className="h-5 w-5 sm:h-8 sm:w-8" />, title: 'Atnāc uz salonu', desc: 'Atnāc uz izvēlēto Estee City salonu un izbaudi profesionālu apkalpošanu' },
             ].map((item, i) => (
               <div key={item.step} className="relative">
-                <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 h-full">
-                  <span className="text-4xl sm:text-6xl font-black text-primary-100">{item.step}</span>
-                  <div className="w-11 h-11 sm:w-14 sm:h-14 bg-primary-50 rounded-xl sm:rounded-2xl flex items-center justify-center text-primary-600 mt-3 sm:mt-4 mb-3 sm:mb-4">
+                <div className="bg-white rounded-xl sm:rounded-3xl p-4 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 h-full">
+                  <span className="text-3xl sm:text-6xl font-black text-primary-100">{item.step}</span>
+                  <div className="w-9 h-9 sm:w-14 sm:h-14 bg-primary-50 rounded-xl sm:rounded-2xl flex items-center justify-center text-primary-600 mt-2 sm:mt-4 mb-2 sm:mb-4">
                     {item.icon}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-500">{item.desc}</p>
+                  <h3 className="text-base sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{item.title}</h3>
+                  <p className="text-xs sm:text-base text-gray-500">{item.desc}</p>
                 </div>
                 {i < 2 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 z-20">
@@ -279,41 +279,41 @@ export default function Home() {
       </section>
 
       {/* Locations */}
-      <section id="locations" className="py-14 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+      <section id="locations" className="py-8 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-16">
+            <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4">
               Mūsu saloni
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 sm:mb-4">
               3 saloni Rīgā
             </h2>
-            <p className="text-base sm:text-xl text-gray-500">Izvēlies sev tuvāko Estee City salonu</p>
+            <p className="text-sm sm:text-xl text-gray-500">Izvēlies sev tuvāko Estee City salonu</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-8 max-w-5xl mx-auto">
             {locations.map((loc) => (
-              <div key={loc.name} className="bg-gray-50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:bg-primary-50/50 transition-all duration-300 group">
-                <div className="w-11 h-11 sm:w-14 sm:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm mb-4 sm:mb-6 group-hover:shadow-md transition">
-                  <MapPin className="h-5 w-5 sm:h-7 sm:w-7 text-primary-600" />
+              <div key={loc.name} className="bg-gray-50 rounded-xl sm:rounded-3xl p-4 sm:p-8 hover:bg-primary-50/50 transition-all duration-300 group">
+                <div className="w-9 h-9 sm:w-14 sm:h-14 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm mb-3 sm:mb-6 group-hover:shadow-md transition">
+                  <MapPin className="h-4 w-4 sm:h-7 sm:w-7 text-primary-600" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Estee City {loc.name}</h3>
-                <p className="text-sm sm:text-base text-gray-500 mb-4 sm:mb-6">{loc.address}</p>
-                <div className="space-y-3">
+                <h3 className="text-base sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">Estee City {loc.name}</h3>
+                <p className="text-xs sm:text-base text-gray-500 mb-3 sm:mb-6">{loc.address}</p>
+                <div className="space-y-2">
                   <a
                     href="tel:+37125664577"
-                    className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition text-sm sm:text-base"
+                    className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition text-xs sm:text-base"
                   >
-                    <Phone className="h-4 w-4 mr-2" />
+                    <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5" />
                     +371 25 664 577
                   </a>
                   <a
                     href={loc.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-xl font-semibold text-sm sm:text-base text-gray-700 hover:text-primary-600 transition-all"
+                    className="flex items-center w-full px-3 py-2 sm:px-4 sm:py-3 bg-white hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-xl font-semibold text-xs sm:text-base text-gray-700 hover:text-primary-600 transition-all"
                   >
-                    <Navigation className="h-4 w-4 mr-2" />
+                    <Navigation className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5" />
                     Atvērt kartē
                   </a>
                 </div>
@@ -324,31 +324,31 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="reviews" className="py-14 sm:py-24 hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-white/80 text-primary-600 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+      <section id="reviews" className="py-8 sm:py-24 hero-gradient">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-16">
+            <span className="inline-block px-3 py-1 bg-white/80 text-primary-600 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4">
               Atsauksmes
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 sm:mb-4">
               Ko saka mūsu klienti
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-8 max-w-5xl mx-auto">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-                <div className="flex mb-3 sm:mb-4">
+              <div key={i} className="bg-white rounded-xl sm:rounded-3xl p-4 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="flex mb-2 sm:mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 sm:h-5 sm:w-5 text-amber-400 fill-amber-400" />
+                    <Star key={j} className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-xs sm:text-base text-gray-700 mb-3 sm:mb-6 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white font-bold text-sm sm:text-base">
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white font-bold text-xs sm:text-base">
                     {t.name.charAt(0)}
                   </div>
-                  <span className="ml-3 font-semibold text-gray-900 text-sm sm:text-base">{t.name}</span>
+                  <span className="ml-2 font-semibold text-gray-900 text-xs sm:text-base">{t.name}</span>
                 </div>
               </div>
             ))}
@@ -357,28 +357,28 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 sm:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-rose-500 rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl shadow-primary-500/30">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-3 sm:mb-4">
+      <section className="py-8 sm:py-24">
+        <div className="max-w-3xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-primary-600 via-primary-500 to-rose-500 rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center text-white shadow-2xl shadow-primary-500/30">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-4">
               Gatava uz vizīti?
             </h2>
-            <p className="text-base sm:text-xl text-primary-100 mb-6 sm:mb-8 max-w-xl mx-auto">
+            <p className="text-sm sm:text-xl text-primary-100 mb-4 sm:mb-8 max-w-xl mx-auto">
               Pierakstities tiešsaistē vai sazinieties ar mums pa tālruni. Jūsu skaistums labās rokās!
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center px-8 py-3 sm:px-10 sm:py-4 bg-white text-primary-600 rounded-full text-base sm:text-lg font-bold hover:bg-gray-50 transition-all shadow-lg"
+                className="inline-flex items-center justify-center px-6 py-2.5 sm:px-10 sm:py-4 bg-white text-primary-600 rounded-full text-sm sm:text-lg font-bold hover:bg-gray-50 transition-all shadow-lg"
               >
                 Pierakstīties online
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
               <a
                 href="tel:+37125664577"
-                className="inline-flex items-center justify-center px-8 py-3 sm:px-10 sm:py-4 bg-white/20 text-white rounded-full text-base sm:text-lg font-bold hover:bg-white/30 transition-all border border-white/30"
+                className="inline-flex items-center justify-center px-6 py-2.5 sm:px-10 sm:py-4 bg-white/20 text-white rounded-full text-sm sm:text-lg font-bold hover:bg-white/30 transition-all border border-white/30"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 +371 25 664 577
               </a>
             </div>
@@ -387,38 +387,38 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 text-white py-10 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+      <footer className="bg-gray-950 text-white py-8 sm:py-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
             <div className="sm:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-                  <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+              <div className="flex items-center space-x-2 mb-3">
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
+                  <Sparkles className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-white" />
                 </div>
-                <span className="text-lg sm:text-xl font-bold">ESTEE CITY BEAUTY</span>
+                <span className="text-base sm:text-xl font-bold">ESTEE CITY BEAUTY</span>
               </div>
-              <p className="text-sm sm:text-base text-gray-400 max-w-md mb-6">
+              <p className="text-xs sm:text-base text-gray-400 max-w-md mb-4">
                 Profesionāla skaistumkopšanas studija ar 3 saloniem Rīgā. Manikīrs, pedikīrs, skropstas, permanentais grims un masāža.
               </p>
-              <div className="flex space-x-4">
-                <a href="https://www.facebook.com/esteecitylounge" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
-                  <span className="text-sm font-bold">f</span>
+              <div className="flex space-x-3">
+                <a href="https://www.facebook.com/esteecitylounge" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+                  <span className="text-xs sm:text-sm font-bold">f</span>
                 </a>
-                <a href="https://www.instagram.com/esteecitybeauty" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
-                  <Instagram className="h-4 w-4" />
+                <a href="https://www.instagram.com/esteecitybeauty" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition">
+                  <Instagram className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </a>
               </div>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4 text-sm sm:text-base">Saloni</h4>
-              <div className="space-y-4 text-gray-400">
+              <h4 className="font-bold mb-3 text-xs sm:text-base">Saloni</h4>
+              <div className="space-y-3 text-gray-400">
                 {locations.map((loc) => (
                   <div key={loc.name} className="flex items-start space-x-2">
-                    <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                    <MapPin className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-gray-300 text-sm">{loc.name}</p>
-                      <p className="text-xs sm:text-sm">{loc.address}</p>
+                      <p className="font-medium text-gray-300 text-xs sm:text-sm">{loc.name}</p>
+                      <p className="text-xs">{loc.address}</p>
                     </div>
                   </div>
                 ))}
@@ -426,26 +426,26 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4 text-sm sm:text-base">Kontakti</h4>
-              <div className="space-y-3 text-gray-400 text-sm">
+              <h4 className="font-bold mb-3 text-xs sm:text-base">Kontakti</h4>
+              <div className="space-y-2 text-gray-400 text-xs sm:text-sm">
                 <a href="tel:+37125664577" className="flex items-center space-x-2 hover:text-white transition">
-                  <Phone className="h-4 w-4 flex-shrink-0" />
+                  <Phone className="h-3.5 w-3.5 flex-shrink-0" />
                   <span>+371 25 664 577</span>
                 </a>
                 <a href="https://www.instagram.com/esteecitybeauty" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-white transition">
-                  <Instagram className="h-4 w-4 flex-shrink-0" />
+                  <Instagram className="h-3.5 w-3.5 flex-shrink-0" />
                   <span>@esteecitybeauty</span>
                 </a>
               </div>
-              <h4 className="font-bold mt-6 mb-2 text-sm sm:text-base">Saites</h4>
-              <div className="space-y-2 text-sm">
+              <h4 className="font-bold mt-4 mb-2 text-xs sm:text-base">Saites</h4>
+              <div className="space-y-1.5 text-xs sm:text-sm">
                 <Link href="/book" className="block text-gray-400 hover:text-white transition">Pierakstīties</Link>
                 <a href="https://www.skaists.lv/m/3346" target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-white transition">Skaists.lv profils</a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm">
+          <div className="border-t border-gray-800 mt-6 sm:mt-12 pt-4 sm:pt-8 text-center text-gray-500 text-xs">
             <p>&copy; 2026 Estee City Beauty. Visas tiesības aizsargātas.</p>
           </div>
         </div>
